@@ -24,3 +24,8 @@
 
 * memo 是防止 props没变时重新渲染
 * useMemo 和 useCallback 是防止props不必要的变化
+
+
+* 如果子组件用了 memo 那给它传递的对象，函数类的props就需要用 useMemo  useCallback包裹 否则每次props都会变，memo就没有用了。
+
+* 反之 如果 props使用 useMemo useCallback 但是子组件没有被 memo包裹，那也没有意义，因为不管props变没变都会重新渲染，只是做了无用功。
